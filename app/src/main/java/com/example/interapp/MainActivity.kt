@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.interapp.dtos.*
 import com.example.interapp.logic.ItemAdapter
 import com.example.interapp.logic.JSONProvider
+import com.example.interapp.logic.RecyclerListDecorator
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,11 +31,11 @@ class MainActivity : AppCompatActivity() {
     private fun createContent(infoDto: AccountInfo) : List<Item>{
         val map = createMap()
         val content: ArrayList<Item> = ArrayList()
-        content.add(Title("Личный кабинет",12))
+        content.add(Title("Личный кабинет",36))
         content.add(infoDto.info)
-        content.add(Title("Тариф",12))
+        content.add(Title("Тариф",24))
         content.addAll(infoDto.availableTariffs)
-        content.add(Title("Пользователь",12))
+        content.add(Title("Пользователь",24))
         for (info in infoDto.userInfo) {
             content.add(User(info.text,null,
                 map[info.iconName]?.let { applicationContext.getDrawable(it) }))

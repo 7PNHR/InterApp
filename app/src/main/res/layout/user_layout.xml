@@ -11,6 +11,7 @@
         android:layout_marginHorizontal="16dp"
         android:backgroundTint="#ebebeb"
         android:padding="4dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout

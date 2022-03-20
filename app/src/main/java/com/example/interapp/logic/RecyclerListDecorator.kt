@@ -1,4 +1,4 @@
-package com.example.interapp
+package com.example.interapp.logic
 
 import android.graphics.Canvas
 import android.graphics.Rect
@@ -17,16 +17,16 @@ class RecyclerListDecorator(private val items : List<Item>, private val divider:
         parent.adapter?.let { adapter ->
             val childAdapterPosition = parent.getChildAdapterPosition(v)
                 .let { if (it == RecyclerView.NO_POSITION) return else it }
-            rect.bottom = // Add space/"padding" on right side
-                if (childAdapterPosition == adapter.itemCount - 1 ) 0    // No "padding"
-                else dividerHeight                                    // Drawable width "padding"
+            rect.bottom =
+                if (childAdapterPosition == adapter.itemCount - 1 ) 0
+                else dividerHeight
         }
     }
 
     override fun onDraw(canvas: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         super.onDraw(canvas, parent, state)
         parent.adapter?.let { adapter ->
-            parent.children // Displayed children on screen
+            parent.children
                 .forEach { view ->
                     val childAdapterPosition = parent.getChildAdapterPosition(view)
                         .let { if (it == RecyclerView.NO_POSITION) return else it }
