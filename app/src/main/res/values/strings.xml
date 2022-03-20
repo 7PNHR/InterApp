@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">InterApp</string>
+    <string name="your_balance">Ваш баланс</string>
+    <string name="top_up">ПОПОЛНИТЬ</string>
+    <string name="own_cabinet">Личный кабинет</string>
+    <string name="user_cabinet">Личный кабинет</string>
+    <string name="tariff">Тариф</string>
+    <string name="user">Пользователь</string>
 </resources>
