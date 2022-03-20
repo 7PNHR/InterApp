@@ -1,11 +1,12 @@
 package com.example.interapp
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.interapp.dtos.*
-import com.example.interapp.logic.TariffAdapter
+import com.example.interapp.logic.ItemAdapter
 import com.example.interapp.logic.JSONProvider
 
 class MainActivity : AppCompatActivity() {
@@ -15,14 +16,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val infoDto = JSONProvider().getAccountData(applicationContext, "AccountDto.json")
+        val content = createContent(infoDto)
         val recyclerView = findViewById<RecyclerView>(R.id.list)
-
-        val adapter = TariffAdapter()
-        adapter.submitList(infoDto.availableTariffs)
+        val adapter = ItemAdapter()
+        adapter.submitList(content)
         recyclerView.addItemDecoration(
-            RecyclerListDecorator(infoDto.availableTariffs, ResourcesCompat.getDrawable(resources, R.drawable.divider,null)!!)
+            RecyclerListDecorator(content, ResourcesCompat.getDrawable(resources, R.drawable.divider,null)!!)
         )
         recyclerView.adapter = adapter
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private fun createContent(infoDto: AccountInfo) : List<Item>{
+        val map = createMap()
+        val content: ArrayList<Item> = ArrayList()
+        content.add(Title("Личный кабинет",12))
+        content.add(infoDto.info)
+        content.add(Title("Тариф",12))
+        content.addAll(infoDto.availableTariffs)
+        content.add(Title("Пользователь",12))
+        for (info in infoDto.userInfo) {
+            content.add(User(info.text,null,
+                map[info.iconName]?.let { applicationContext.getDrawable(it) }))
+        }
+        return content
     }
 
     private fun createMap(): HashMap<String, Int>{

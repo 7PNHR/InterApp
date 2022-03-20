@@ -11,7 +11,7 @@ class ViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(item: Item) {
         when(item){
-            is UserInfo ->{
+            is User ->{
                 val icon = view.findViewById<ImageView>(R.id.user_icon)
                 val text = view.findViewById<TextView>(R.id.user_text)
                 text.text = item.text

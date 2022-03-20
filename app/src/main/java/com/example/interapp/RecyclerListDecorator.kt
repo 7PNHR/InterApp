@@ -54,8 +54,8 @@ class RecyclerListDecorator(private val items : List<Item>, private val divider:
                 if(items[SecondElementPosition] is Title)
                     return true
             }
-            is UserInfo -> {
-                if(items[SecondElementPosition] is UserInfo)
+            is User -> {
+                if(items[SecondElementPosition] is User)
                     return true
             }
             is Tariff ->{
