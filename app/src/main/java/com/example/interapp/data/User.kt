@@ -1,4 +1,4 @@
-package com.example.interapp.dtos
+package com.example.interapp.data
 
 import android.graphics.drawable.Drawable
 

@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
-import com.example.interapp.dtos.*
+import com.example.interapp.data.*
 
 class RecyclerListDecorator(private val items : List<Item>, private val divider: Drawable) : RecyclerView.ItemDecoration() {
 

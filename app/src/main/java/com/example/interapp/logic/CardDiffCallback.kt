@@ -1,7 +1,7 @@
 package com.example.interapp.logic
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.interapp.dtos.Item
+import com.example.interapp.data.Item
 
 class CardDiffCallback : DiffUtil.ItemCallback<Item>() {
 

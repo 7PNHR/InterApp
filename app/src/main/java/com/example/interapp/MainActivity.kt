@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.interapp.dtos.*
+import com.example.interapp.data.*
 import com.example.interapp.logic.ItemAdapter
 import com.example.interapp.logic.JSONProvider
 import com.example.interapp.logic.RecyclerListDecorator

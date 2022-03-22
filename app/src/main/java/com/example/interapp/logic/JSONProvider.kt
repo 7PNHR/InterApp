@@ -1,9 +1,8 @@
 package com.example.interapp.logic
 
 import android.content.Context
-import com.example.interapp.dtos.AccountInfo
+import com.example.interapp.data.AccountInfo
 import com.google.gson.Gson
-import java.io.IOException
 
 class JSONProvider {
     fun getAccountData(context: Context, name: String): AccountInfo {

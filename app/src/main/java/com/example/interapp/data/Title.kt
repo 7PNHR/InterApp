@@ -1,4 +1,4 @@
-package com.example.interapp.dtos
+package com.example.interapp.data
 
 data class Title(
     val title: String,
