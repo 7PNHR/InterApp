@@ -5,12 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.interapp.R
 import com.example.interapp.data.*
 
-class ItemAdapter : ListAdapter<Item, ItemAdapter.ViewHolder>(CardDiffCallback()) {
+class ItemAdapter : Adapter<Item, ItemAdapter.ViewHolder>(CardDiffCallback()) {
 
     class ViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
 
@@ -53,7 +54,7 @@ class ItemAdapter : ListAdapter<Item, ItemAdapter.ViewHolder>(CardDiffCallback()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View
-        when (currentList[viewType]) {
+        when (viewType) {
             is Info -> {
                 view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.info_layout, parent, false)
@@ -81,3 +82,10 @@ class ItemAdapter : ListAdapter<Item, ItemAdapter.ViewHolder>(CardDiffCallback()
     }
 }
 
+class CardDiffCallback : DiffUtil.ItemCallback<Item>() {
+
+    override fun areItemsTheSame(oldItem: Item, newItem: Item): Boolean = oldItem == newItem
+
+    override fun areContentsTheSame(oldItem: Item, newItem: Item): Boolean = oldItem == newItem
+
+}
