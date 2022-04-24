@@ -24,14 +24,6 @@
   ],
   "userInfo": [
     {
-      "text": "Иванов Иван Иванович",
-      "iconName": "account"
-    },
-    {
-      "text": "Сахалин, ул. Пушкина, д. Колотушкина",
-      "iconName": "home"
-    },
-    {
       "text": "Доступные услуги",
       "iconName": "widgets"
     }

@@ -1,7 +1,8 @@
 package com.example.interapp.data
 
 data class Info(
-    val month: String,
-    val ls: String,
-    val balance: String,
-    val dept: String ) : Item()
+    val month: String = "Сентябрь",
+    val accNum: Int,
+    val balance: Int,
+    val nextPay: Int,
+    val id: String) : Item()

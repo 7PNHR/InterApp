@@ -1,7 +1,8 @@
 package com.example.interapp.data
 
 data class Tariff (
-    val name: String,
-    val speed: String,
-    val cost: String): Item()
+    val title: String,
+    val desc: String,
+    val cost: Int,
+    val id: String): Item()
 

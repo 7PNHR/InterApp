@@ -40,9 +40,9 @@ class ItemAdapter : ListAdapter<Item, ItemAdapter.ViewHolder>(CardDiffCallback()
                     val title = view.findViewById<TextView>(R.id.tariff_name)
                     val cost = view.findViewById<TextView>(R.id.tariff_cost)
                     val speed = view.findViewById<TextView>(R.id.tariff_speed)
-                    title.text = item.name
+                    title.text = item.title
                     cost.text = item.cost
-                    speed.text = item.speed
+                    speed.text = item.desc
                 }
             }
         }
